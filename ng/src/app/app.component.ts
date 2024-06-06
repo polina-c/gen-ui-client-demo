@@ -10,4 +10,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ng';
+
+  onAddContent() {
+    // Add the content to the DOM
+    const element = document.createElement('div');
+    //element.innerHTML = this.content.nativeElement.innerHTML;
+    document.body.appendChild(element);
+  }
 }
