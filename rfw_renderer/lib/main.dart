@@ -1,5 +1,6 @@
-import 'package:counter/frame_widgets.dart';
 import 'package:flutter/material.dart';
+
+import 'rfw.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +36,7 @@ class GenUI extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: GenUiRouter(
+        child: RfwContent(
           frameId: frameId,
         ),
       ),
