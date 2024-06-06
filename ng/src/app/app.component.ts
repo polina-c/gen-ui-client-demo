@@ -14,7 +14,7 @@ export class AppComponent {
   onAddContent() {
     // Add the content to the DOM
     const element = document.createElement('div');
-    //element.innerHTML = this.content.nativeElement.innerHTML;
+    element.innerHTML = 'Hello World!';
     document.body.appendChild(element);
   }
 }
