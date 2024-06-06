@@ -34,50 +34,50 @@ class _ExampleState extends State<Example> {
   final Runtime _runtime = Runtime();
   final DynamicContent _data = DynamicContent();
 
-  @override
-  void reassemble() {
-    // This function causes the Runtime to be updated any time the app is
-    // hot reloaded, so that changes to _createLocalWidgets can be seen
-    // during development. This function has no effect in production.
-    super.reassemble();
-    _update();
-  }
+  // @override
+  // void reassemble() {
+  //   // This function causes the Runtime to be updated any time the app is
+  //   // hot reloaded, so that changes to _createLocalWidgets can be seen
+  //   // during development. This function has no effect in production.
+  //   super.reassemble();
+  //   _update();
+  // }
 
-  static const LibraryName localName = LibraryName(<String>['local']);
-  static const LibraryName remoteName = LibraryName(<String>['remote']);
+  // static const LibraryName localName = LibraryName(<String>['local']);
+  // static const LibraryName remoteName = LibraryName(<String>['remote']);
 
-  void _update() {
-    _runtime.update(localName, _createLocalWidgets());
-    // Normally we would obtain the remote widget library in binary form from a
-    // server, and decode it with [decodeLibraryBlob] rather than parsing the
-    // text version using [parseLibraryFile]. However, to make it easier to
-    // play with this sample, this uses the slower text format.
-    _runtime.update(remoteName, parseLibraryFile('''
-      import local;
-      widget root = GreenBox(
-        child: Hello(name: "World"),
-      );
-    '''));
-  }
+  // void _update() {
+  //   _runtime.update(localName, _createLocalWidgets());
+  //   // Normally we would obtain the remote widget library in binary form from a
+  //   // server, and decode it with [decodeLibraryBlob] rather than parsing the
+  //   // text version using [parseLibraryFile]. However, to make it easier to
+  //   // play with this sample, this uses the slower text format.
+  //   _runtime.update(remoteName, parseLibraryFile('''
+  //     import local;
+  //     widget root = GreenBox(
+  //       child: Hello(name: "World"),
+  //     );
+  //   '''));
+  // }
 
-  static WidgetLibrary _createLocalWidgets() {
-    return LocalWidgetLibrary(<String, LocalWidgetBuilder>{
-      'GreenBox': (BuildContext context, DataSource source) {
-        return ColoredBox(
-          color: const Color(0xFF002211),
-          child: source.child(<Object>['child']),
-        );
-      },
-      'Hello': (BuildContext context, DataSource source) {
-        return Center(
-          child: Text(
-            'Hello, ${source.v<String>(<Object>["name"])}!',
-            textDirection: TextDirection.ltr,
-          ),
-        );
-      },
-    });
-  }
+  // static WidgetLibrary _createLocalWidgets() {
+  //   return LocalWidgetLibrary(<String, LocalWidgetBuilder>{
+  //     'GreenBox': (BuildContext context, DataSource source) {
+  //       return ColoredBox(
+  //         color: const Color(0xFF002211),
+  //         child: source.child(<Object>['child']),
+  //       );
+  //     },
+  //     'Hello': (BuildContext context, DataSource source) {
+  //       return Center(
+  //         child: Text(
+  //           'Hello, ${source.v<String>(<Object>["name"])}!',
+  //           textDirection: TextDirection.ltr,
+  //         ),
+  //       );
+  //     },
+  //   });
+  // }
 
   // Normally this would be obtained dynamically, but for this example
   // we hard-code the "remote" widgets into the app.
@@ -95,7 +95,7 @@ class _ExampleState extends State<Example> {
     widget root = Container(
       color: 0xFF002211,
       child: Center(
-        child: Text(text: ["Hello, ", data.greet.name, "!"], textDirection: "ltr"),
+        child: Text(text: "Hello, World!"),
       ),
     );
   ''');
