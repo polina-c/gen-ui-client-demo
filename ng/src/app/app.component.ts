@@ -12,9 +12,8 @@ export class AppComponent {
   title = 'ng';
 
   onAddContent() {
-    // Add the content to the DOM
     const element = document.createElement('div');
-    element.innerHTML = 'Hello World!';
+    element.innerHTML = '<iframe src="http://localhost:50796/" title="Dynamic" style="position: relative; top: -10px"></iframe>';
     document.body.appendChild(element);
   }
 }

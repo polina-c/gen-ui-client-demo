@@ -9,16 +9,10 @@ class RfwContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Text('before'),
-        SizedBox(
-          width: 300,
-          height: 300,
-          child: Example(),
-        ),
-        Text('after'),
-      ],
+    return const SizedBox(
+      width: 300,
+      height: 150,
+      child: Example(),
     );
   }
 }
