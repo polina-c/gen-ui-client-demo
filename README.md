@@ -1,8 +1,14 @@
 # Demo steps
 
-## Choose one of two:
+## 1. RFW in Angular
 
-### Start app from build
+
+
+## 2. GenUI in JS
+
+### Choose one of two:
+
+#### Start app from build
 In terminal 1:
 1. `cd counter`
 2. `flutter build web` to produce `counter\build\web\`
@@ -10,13 +16,13 @@ In terminal 1:
 4. Run `python3 -m http.server 8000`
 5. Copy `http://localhost:8000/`
 
-### Or start app with flutter tools
+#### Or start app with flutter tools
 In terminal 1:
 1. `cd counter`
 2. `flutter run -d chrome`
 3. Find `uri=` in console output and copy the url
 
-## Render UI
+### Render UI
 In terminal 2:
 1. Run `open js/renderer.html`
 2. Paste the copied URL to boxes to replace hard coded one
