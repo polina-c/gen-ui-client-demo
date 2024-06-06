@@ -2,7 +2,10 @@
 
 ## 1. RFW in Angular
 
-
+```
+cd ng
+ng serve
+```
 
 ## 2. GenUI in JS
 
