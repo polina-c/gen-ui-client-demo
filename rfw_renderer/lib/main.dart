@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: (settings) {
-        print('route: ${settings.name}');
-        final frameId = settings.name?.split('=').last ?? null;
-        print('frameId: $frameId');
+        // print('route: ${settings.name}');
+        final frameId = settings.name?.split('=').last;
+        // print('frameId: $frameId');
         return MaterialPageRoute(builder: (context) => GenUI(frameId: frameId));
       },
     );
@@ -33,6 +33,7 @@ class GenUI extends StatelessWidget {
 
   final String? frameId;
 
+  @override
   Widget build(BuildContext context) {
     return Material(
       child: Center(

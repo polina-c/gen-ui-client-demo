@@ -5,8 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "counter",
-            "cwd": "counter",
+            "name": "static_renderer",
+            "cwd": "static_renderer",
             "request": "launch",
             "type": "dart"
         },

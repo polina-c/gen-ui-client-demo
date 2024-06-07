@@ -13,15 +13,15 @@ ng serve
 
 #### Start app from build
 In terminal 1:
-1. `cd counter`
-2. `flutter build web` to produce `counter\build\web\`
+1. `cd static_renderer`
+2. `flutter build web` to produce `static_renderer\build\web\`
 3. cd build/web/
 4. Run `python3 -m http.server 8000`
 5. Copy `http://localhost:8000/`
 
 #### Or start app with flutter tools
 In terminal 1:
-1. `cd counter`
+1. `cd static_renderer`
 2. `flutter run -d chrome`
 3. Find `uri=` in console output and copy the url
 
