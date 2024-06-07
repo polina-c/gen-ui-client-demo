@@ -15,7 +15,7 @@ class RfwContent extends StatelessWidget {
       child: Column(
         children: [
           Text('$frameId'),
-          if (frameId == 'improved') ImprovedExample() else Example(),
+          if (frameId == 'original') Example() else ImprovedExample(),
         ],
       ),
     );
