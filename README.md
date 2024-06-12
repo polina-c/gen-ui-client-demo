@@ -3,7 +3,8 @@
 ## 1. RFW in Angular
 
 ```
-cd ng
+cd ng-iframe
+npm install
 ng serve
 ```
 
@@ -35,3 +36,11 @@ In terminal 2:
 If started with flutter tools:
 5. Update a frame's code and trigger hot reload with 'r' in console
 6. Click 'Render' near the modified frame on renderer.html
+
+## 3. Embedding in Angular
+
+```
+cd ng-embedding
+npm install
+ng serve
+```
