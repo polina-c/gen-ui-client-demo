@@ -7,7 +7,7 @@ cd ng
 ng serve
 ```
 
-## 2. GenUI in JS
+## 2. GenUI in JS as iFrame
 
 ### Choose one of two:
 
@@ -27,7 +27,7 @@ In terminal 1:
 
 ### Render UI
 In terminal 2:
-1. Run `open js/renderer.html`
+1. Run `open js/iframe_host.html`
 2. Paste the copied URL to boxes to replace hard coded one
 3. Click `Render`
 4. Find the frames rendered

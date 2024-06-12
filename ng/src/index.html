@@ -1,13 +1,32 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Ng</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="flutter.js" defer></script>
 </head>
+
 <body>
+  <div id="flutter_host">Loading...</div>
+
+  <script>
+    window.addEventListener("load", function (ev) {
+      _flutter.loader.loadEntrypoint({
+        onEntrypointLoaded: async function (engineInitializer) {
+          let appRunner = await engineInitializer.initializeEngine({
+            // Pass a reference to "div#flutter_host" into the Flutter engine.
+            hostElement: document.querySelector("#flutter_host")
+          });
+          await appRunner.runApp();
+        }
+      });
+    });
+  </script>
   <app-root></app-root>
 </body>
+
 </html>
