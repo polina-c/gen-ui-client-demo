@@ -4,9 +4,11 @@ class CounterDemo extends StatefulWidget {
   const CounterDemo({
     super.key,
     required this.counter,
+    required this.ngToFlutterArg,
   });
 
   final ValueNotifier<int> counter;
+  final String ngToFlutterArg;
 
   @override
   State<CounterDemo> createState() => _CounterDemoState();

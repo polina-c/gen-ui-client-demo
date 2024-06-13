@@ -25,7 +25,7 @@ declare var window: {
     .spinner {
       display: flex;
       justify-content: center;
-      align-items: center;    
+      align-items: center;
     }`,
   ],
   imports: [
@@ -49,7 +49,11 @@ export class NgFlutterComponent implements AfterViewInit {
         let appRunner = await engineInitializer.initializeEngine({
           hostElement: target,
           assetBase: this.assetBase,
+          initialData: {
+            ngToFlutterArg: 'hello from Angular!',
+          },
         });
+
         await appRunner.runApp();
       }
     });

@@ -37,7 +37,11 @@ If started with flutter tools:
 5. Update a frame's code and trigger hot reload with 'r' in console
 6. Click 'Render' near the modified frame on renderer.html
 
-## 3. Embedding in Angular
+## 3. Embedding in Angular with args
+
+Created using:
+https://github.com/flutter/samples/tree/main/web_embedding/ng-flutter
+https://github.com/ditman/flutter-experimental/blob/main/multi_counter/web/flutter_bootstrap.js#L36
 
 ```
 cd ng-embedding

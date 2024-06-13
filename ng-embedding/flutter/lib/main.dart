@@ -1,6 +1,7 @@
 import 'dart:js_interop' show createJSInteropWrapper;
 
 import 'package:flutter/material.dart';
+import 'package:ng_companion/src/initial_data.dart';
 
 import 'pages/counter.dart';
 import 'pages/dash.dart';
@@ -24,6 +25,7 @@ class _MyAppState extends State<MyApp> {
       ValueNotifier<DemoScreen>(DemoScreen.counter);
   final ValueNotifier<int> _counter = ValueNotifier<int>(0);
   final ValueNotifier<String> _text = ValueNotifier<String>('');
+  late final String _ngToFlutterArg;
 
   late final DemoAppStateManager _state = DemoAppStateManager(
     screen: _screen,
@@ -38,6 +40,10 @@ class _MyAppState extends State<MyApp> {
 
     // Emit this through the root object of the flutter app :)
     broadcastAppEvent('flutter-initialized', export);
+
+    final int viewId = View.of(context).viewId;
+    final InitialData? data = InitialData.forView(viewId);
+    _ngToFlutterArg = data?.ngToFlutterArg ?? '<No initial data provided>';
   }
 
   @override
@@ -54,13 +60,18 @@ class _MyAppState extends State<MyApp> {
       ),
       home: ValueListenableBuilder<DemoScreen>(
         valueListenable: _screen,
-        builder: (context, value, child) => demoScreenRouter(value),
+        builder: (context, value, child) =>
+            demoScreenRouter(value, _ngToFlutterArg),
       ),
     );
   }
 
-  Widget demoScreenRouter(DemoScreen which) => switch (which) {
-        DemoScreen.counter => CounterDemo(counter: _counter),
+  Widget demoScreenRouter(DemoScreen which, String ngToFlutterArg) =>
+      switch (which) {
+        DemoScreen.counter => CounterDemo(
+            counter: _counter,
+            ngToFlutterArg: ngToFlutterArg,
+          ),
         DemoScreen.text => TextFieldDemo(text: _text),
         DemoScreen.dash => DashDemo(text: _text)
       };
